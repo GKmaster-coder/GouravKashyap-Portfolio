@@ -47,16 +47,16 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
-      <nav className="w-full bg-transparent backdrop-blur-sm bg-black/20 border-b border-red-500/10">
+      <nav className="w-full bg-transparent  ">
         <div className="container mx-auto px-4 sm:px-6 md:px-10 py-3 md:py-4 flex items-center justify-between">
           {/* Logo */}
           <NavLink 
             to="/" 
-            className="text-xl sm:text-2xl md:text-2xl font-extrabold text-red-500 hover:text-red-400 transition-colors duration-300"
+            className="text-xl sm:text-2xl md:text-2xl font-extrabold text-red-600 hover:text-red-400 transition-colors duration-300"
             onClick={() => setOpen(false)}
           >
             Gourav Kashyap
-          </NavLink>
+          </NavLink> 
 
           {/* Center Menu Button */}
           <div className="flex-1 flex justify-center max-w-xs">
@@ -64,7 +64,7 @@ export default function Navbar() {
               onClick={() => setOpen((s) => !s)}
               aria-expanded={open}
               aria-label="Open menu"
-              className="relative inline-flex items-center justify-center px-4 sm:px-6 py-2 rounded-full border border-red-500/30 bg-gradient-to-r from-red-700/80 to-red-600/70 backdrop-blur-md shadow-lg hover:scale-105 transform transition active:scale-95"
+              className="relative inline-flex items-center justify-center px-4 sm:px-6 py-2 rounded-full border border-red-500/30 bg-red-600 hover:bg-red-700  backdrop-blur-md shadow-lg hover:scale-105 transform transition active:scale-95"
             >
               <span className="hidden md:inline text-white font-semibold tracking-wide text-sm sm:text-base">MENU</span>
               <span className="md:hidden inline-flex flex-col gap-1">

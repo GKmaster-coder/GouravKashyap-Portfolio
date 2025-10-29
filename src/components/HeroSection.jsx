@@ -105,7 +105,7 @@ const HeroSection = ({ className = "" }) => {
       `}</style>
 
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-red-900/30" />
+      <div className="absolute inset-0 bg-linear-to-br from-slate-900 via-slate-800 to-red-900/30" />
       
       {/* Cosmic Glow Effect */}
       <div className="absolute inset-0 cosmic-glow" />
@@ -186,7 +186,7 @@ const HeroSection = ({ className = "" }) => {
               >
                 <span className="text-white">Hello, I'm</span>
                 <br />
-                <span className="bg-gradient-to-r from-red-400 to-rose-400 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-red-400 to-rose-400 bg-clip-text text-transparent">
                   Gaurav Kashyap
                 </span>
               </motion.h2>

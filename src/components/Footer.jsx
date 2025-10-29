@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="relative w-full bg-black text-white py-16 overflow-hidden">
       {/* Gradient Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#003b2f24] to-[#000f2f40] opacity-90"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-black via-[#003b2f24] to-[#000f2f40] opacity-90"></div>
 
       {/* Content */}
       <div className="relative text-center max-w-3xl mx-auto px-4">

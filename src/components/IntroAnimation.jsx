@@ -9,19 +9,22 @@ const ANIMATION_CONFIG = {
 };
 
 const GREETINGS = [
-  "Hello",
-  "नमस्ते",
-  "Hola",
-  "Bonjour",
-  "Ciao",
-  "Olá",
-  "Здравствуйте",
-  "Merhaba",
-  "Γειά",
-  "Hej",
-  "Hallo",
-  "Salam",
+  "Hello",               // English
+  "नमस्ते",              // Hindi
+  "Hola",                // Spanish
+  "Bonjour",             // French
+  "Ciao",                // Italian
+  "Olá",                 // Portuguese
+  "こんにちは",           // Japanese (Konnichiwa)
+  "안녕하세요",            // Korean (Annyeonghaseyo)
+  "你好",                 // Chinese (Nǐ hǎo)
+  "Hallo",               // German
+  "Salam",            
+  "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
+    "नमस्ते",
+     "Let's Go...",        
 ];
+
 
 const IntroAnimation = ({ onFinish }) => {
   const greetings = useMemo(() => GREETINGS, []);
@@ -59,7 +62,7 @@ const IntroAnimation = ({ onFinish }) => {
         >
           <motion.h1
             key={currentIndex}
-            className="text-white text-5xl font-bold text-center px-4"
+            className="text-white text-7xl font-bold text-center px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: -20 }}
             exit={{ opacity: 0, y: -40 }}

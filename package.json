@@ -22,6 +22,7 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.4",
     "react-tsparticles": "^2.12.2",
+    "tailwind-scrollbar-hide": "^4.0.0",
     "tailwindcss": "^4.1.16",
     "three": "^0.180.0",
     "tsparticles": "^3.9.1"
