@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Terminal = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState([
-    { type: "system", text: "Welcome to My Portfolio Terminal!" },
+    { type: "system", text: "Welcome to Gourav Kashyap's Portfolio Terminal 🚀" },
     { type: "system", text: 'Type "help" to see available commands.' },
     { type: "system", text: "" },
   ]);
@@ -16,7 +16,6 @@ const Terminal = () => {
         { type: "system", text: "Available commands:" },
         { type: "command", text: "help       - Show this help message" },
         { type: "command", text: "skills     - View my technical skills" },
-        { type: "command", text: "resume     - Download my resume" },
         { type: "command", text: "projects   - See my projects" },
         { type: "command", text: "experience - View my work experience" },
         { type: "command", text: "contact    - Get contact information" },
@@ -27,53 +26,31 @@ const Terminal = () => {
     skills: {
       execute: () => [
         { type: "system", text: "Technical Skills:" },
-        { type: "skill", text: "• JavaScript/TypeScript" },
-        { type: "skill", text: "• React.js" },
-        { type: "skill", text: "• Node.js" },
-        { type: "skill", text: "• Python" },
-        { type: "skill", text: "• HTML/CSS" },
-        { type: "skill", text: "• Git & GitHub" },
-        { type: "skill", text: "• MongoDB" },
-        { type: "skill", text: "• AWS" },
+        { type: "skill", text: "• Frontend: React.js, HTML5, CSS3, JavaScript (ES6+), Tailwind CSS, Bootstrap" },
+        { type: "skill", text: "• Backend: Node.js, Express.js, REST APIs, Spring Boot, Hibernate" },
+        { type: "skill", text: "• Databases: MongoDB, MySQL, SQL" },
+        { type: "skill", text: "• Languages: Java (Core & Advanced), C++, C, JavaScript" },
+        { type: "skill", text: "• Tools: VS Code, Eclipse, Git, GitHub, Postman, npm/yarn" },
+        { type: "skill", text: "• Cloud & DevOps: AWS (Basics), Docker" },
       ],
-    },
-
-    resume: {
-      execute: () => {
-        const resumeContent =
-          "Name: John Doe\nEmail: john.doe@example.com\nSkills: React, Node.js, Python\n\nThis is a sample resume content.";
-        const blob = new Blob([resumeContent], { type: "application/pdf" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "resume.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-        return [
-          { type: "system", text: "Downloading resume..." },
-          { type: "system", text: "Resume downloaded successfully!" },
-        ];
-      },
     },
 
     projects: {
       execute: () => [
-        { type: "system", text: "My Projects:" },
+        { type: "system", text: "Highlighted Projects:" },
         {
           type: "project",
           text: (
             <>
               •{" "}
               <Link
-                to="https://ecommerce-demo.vercel.app"
+                to="https://github.com/GKmaster-coder/Ecommerce-Website-BCA-Final-Year-Project.git"
                 target="_blank"
                 className="text-red-400 underline hover:text-red-300"
               >
-                E-commerce Platform
+                E-Commerce Website
               </Link>{" "}
-              — Full-stack React/Node.js app
+              — React + Spring Boot + MySQL full-stack app featuring user auth, shopping cart & admin panel.
             </>
           ),
         },
@@ -82,14 +59,7 @@ const Terminal = () => {
           text: (
             <>
               •{" "}
-              <Link
-                to="https://task-manager-demo.vercel.app"
-                target="_blank"
-                className="text-red-400 underline hover:text-red-300"
-              >
-                Task Management App
-              </Link>{" "}
-              — React with drag & drop
+              <span className="text-red-400">Shape Based Game</span> — Java OOP project teaching 2D & 3D shapes with inheritance, interfaces & polymorphism.
             </>
           ),
         },
@@ -98,14 +68,7 @@ const Terminal = () => {
           text: (
             <>
               •{" "}
-              <Link
-                to="https://portfolio-terminal.vercel.app"
-                target="_blank"
-                className="text-red-400 underline hover:text-red-300"
-              >
-                Portfolio Website
-              </Link>{" "}
-              — React terminal interface
+              <span className="text-red-400">Product Management System</span> — Java + MySQL CRUD system using JDBC, Collection Framework & advanced search.
             </>
           ),
         },
@@ -117,15 +80,19 @@ const Terminal = () => {
         { type: "system", text: "Work Experience:" },
         {
           type: "experience",
-          text: "• Senior Frontend Developer - Tech Corp (2022–Present)",
+          text: "• Full Stack Developer Intern — Ntechzy Pvt. Ltd. (May 2025 – Present)",
         },
         {
           type: "experience",
-          text: "• Full Stack Developer - Startup Inc (2020–2022)",
+          text: "  - Building real-time web apps using MERN Stack in an agile team environment.",
         },
         {
           type: "experience",
-          text: "• Junior Developer - Web Solutions (2018–2020)",
+          text: "  - Developing responsive UIs, integrating REST APIs & managing MongoDB data models.",
+        },
+        {
+          type: "experience",
+          text: "  - Participating in code reviews, daily standups & sprint development.",
         },
       ],
     },
@@ -133,18 +100,20 @@ const Terminal = () => {
     contact: {
       execute: () => [
         { type: "system", text: "Contact Information:" },
-        { type: "contact", text: "• Email: your.email@example.com" },
+        { type: "contact", text: "• Name: Gourav Kashyap" },
+        { type: "contact", text: "• Email: gouravkashyap2468@gmail.com" },
+        { type: "contact", text: "• Phone: +91 9899174113" },
         {
           type: "contact",
           text: (
             <>
               • LinkedIn:{" "}
               <Link
-                to="https://linkedin.com/in/yourprofile"
+                to="https://www.linkedin.com/in/gourav-kashyap-0241722a3/"
                 target="_blank"
                 className="text-red-400 underline hover:text-red-300"
               >
-                linkedin.com/in/yourprofile
+                linkedin.com/in/gourav-kashyap
               </Link>
             </>
           ),
@@ -155,16 +124,31 @@ const Terminal = () => {
             <>
               • GitHub:{" "}
               <Link
-                to="https://github.com/yourusername"
+                to="https://github.com/GKmaster-coder"
                 target="_blank"
                 className="text-red-400 underline hover:text-red-300"
               >
-                github.com/yourusername
+                github.com/GKmaster-coder
               </Link>
             </>
           ),
         },
-        { type: "contact", text: "• Phone: +1 (555) 123-4567" },
+        {
+          type: "contact",
+          text: (
+            <>
+              • LeetCode:{" "}
+              <Link
+                to="https://leetcode.com/u/GKmaster-coder/"
+                target="_blank"
+                className="text-red-400 underline hover:text-red-300"
+              >
+                leetcode.com/u/GKmaster-coder
+              </Link>
+            </>
+          ),
+        },
+        { type: "contact", text: "• Location: Delhi, India" },
       ],
     },
   };
@@ -177,7 +161,7 @@ const Terminal = () => {
 
     if (command === "clear") {
       setOutput([
-        { type: "system", text: "Welcome to My Portfolio Terminal!" },
+        { type: "system", text: "Welcome to Gourav Kashyap's Portfolio Terminal 🚀" },
         { type: "system", text: 'Type "help" to see available commands.' },
         { type: "system", text: "" },
       ]);
@@ -237,9 +221,7 @@ const Terminal = () => {
             <div className="w-3 h-3 rounded-full bg-red-400 border border-red-300"></div>
             <div className="w-3 h-3 rounded-full bg-red-300 border border-red-200"></div>
           </div>
-          <div className="text-red-400 ml-4 font-bold text-sm">
-            portfolio-terminal
-          </div>
+          <div className="text-red-400 ml-4 font-bold text-sm">gourav-portfolio-terminal</div>
         </div>
 
         <div
@@ -248,10 +230,7 @@ const Terminal = () => {
         >
           <div className="mb-4 space-y-1">
             {output.map((line, index) => (
-              <div
-                key={index}
-                className={`leading-relaxed break-words ${getTextColor(line.type)}`}
-              >
+              <div key={index} className={`leading-relaxed break-words ${getTextColor(line.type)}`}>
                 {line.text}
               </div>
             ))}
@@ -264,7 +243,6 @@ const Terminal = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               className="bg-transparent border-none text-white font-mono text-base outline-none flex-1 caret-red-500 placeholder-gray-500"
-              autoFocus
               placeholder="Type a command..."
             />
           </form>

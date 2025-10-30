@@ -12,16 +12,16 @@ const particlesOptions = {
   fpsLimit: 120,
   interactivity: {
     detectsOn: "canvas",
-    events: { 
-      onHover: { enable: true, mode: "repulse" }, 
-      resize: true 
+    events: {
+      onHover: { enable: true, mode: "repulse" },
+      resize: true
     }
   },
   particles: {
     number: { value: 45, density: { enable: true, area: 800 } },
     color: { value: ["#f87171", "#ef4444", "#fecaca"] },
-    opacity: { value: 0.8, random: { enable: true, minimumValue: 0.3 }},
-    size: { value: 3, random: { enable: true, minimumValue: 1 }},
+    opacity: { value: 0.8, random: { enable: true, minimumValue: 0.3 } },
+    size: { value: 3, random: { enable: true, minimumValue: 1 } },
     move: { enable: true, speed: 0.5, direction: "none", outModes: "bounce" },
     links: {
       enable: true,
@@ -52,7 +52,7 @@ const HeroSection = ({ className = "" }) => {
       let color = "white";
       if (colorIntensity > 0.7) color = "#60a5fa"; // blue
       if (colorIntensity > 0.85) color = "#f87171"; // red
-      
+
       return {
         left: Math.random() * 100 + "%",
         top: Math.random() * 100 + "%",
@@ -66,8 +66,8 @@ const HeroSection = ({ className = "" }) => {
   }, []);
 
   const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ 
-      behavior: 'smooth' 
+    document.getElementById('projects')?.scrollIntoView({
+      behavior: 'smooth'
     });
   };
 
@@ -106,10 +106,10 @@ const HeroSection = ({ className = "" }) => {
 
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-linear-to-br from-slate-900 via-slate-800 to-red-900/30" />
-      
+
       {/* Cosmic Glow Effect */}
       <div className="absolute inset-0 cosmic-glow" />
-      
+
       {/* Static Stars */}
       <div className="absolute inset-0">
         {stars.map((star, i) => (
@@ -234,13 +234,15 @@ const HeroSection = ({ className = "" }) => {
                 </motion.button>
 
                 <motion.a
-                  href="/resume.pdf"
+                  href="/gourav-kashyap-Cv.pdf"
+                  download="Gourav-Kashyap-Resume.pdf"
                   className="group inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-red-500/30 text-red-300 font-semibold hover:border-red-400 hover:text-red-200 transition-all duration-300 backdrop-blur-sm bg-white/5"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Download Resume
                 </motion.a>
+
               </motion.div>
 
               {/* Social Icons */}
@@ -250,10 +252,9 @@ const HeroSection = ({ className = "" }) => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                {[ 
-                  { Icon: FaGithub, href: "https://github.com/your" },
-                  { Icon: FaLinkedin, href: "https://linkedin.com/in/your" },
-                  { Icon: FaTwitter, href: "https://twitter.com/your" }
+                {[
+                  { Icon: FaGithub, href: "https://github.com/GKmaster-coder" },
+                  { Icon: FaLinkedin, href: "https://www.linkedin.com/in/gourav-kashyap-0241722a3/" },
                 ].map(({ Icon, href }, index) => (
                   <motion.a
                     key={href}
@@ -291,14 +292,14 @@ const HeroSection = ({ className = "" }) => {
             >
               {/* Enhanced Glow */}
               <div className="absolute inset-0 -inset-4 bg-gradient-to-r from-red-500/30 to-rose-500/20 rounded-full blur-3xl opacity-40 animate-pulse" />
-              
+
               {/* Star Cluster around image */}
               <div className="absolute -top-4 -right-4 w-8 h-8">
                 <div className="absolute w-1 h-1 bg-blue-400 rounded-full twinkle-star" style={{ animationDelay: '0.5s' }} />
                 <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-white rounded-full star" style={{ animationDelay: '1s' }} />
                 <div className="absolute bottom-0 left-2 w-1 h-1 bg-red-300 rounded-full twinkle-star" style={{ animationDelay: '2s' }} />
               </div>
-              
+
               {/* Image */}
               <div className="hidden lg:flex justify-center lg:justify-start relative z-10">
                 <motion.img

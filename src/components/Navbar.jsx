@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(true); // 👈 new state for navbar visibility
   const panelRef = useRef(null);
 
   const navLinks = [
@@ -13,6 +14,18 @@ export default function Navbar() {
     { name: "Projects", path: "/projects" },
     { name: "Contact", path: "/contact" },
   ];
+
+  // 🔥 Hide navbar after scrolling down 2 sections (about 2 view heights)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const threshold = window.innerHeight * 2; // hide after 2 sections
+      setVisible(scrollY < threshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -46,148 +59,137 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
-      <nav className="w-full bg-transparent  ">
-        <div className="container mx-auto px-4 sm:px-6 md:px-10 py-3 md:py-4 flex items-center justify-between">
-          {/* Logo */}
-          <NavLink 
-            to="/" 
-            className="text-xl sm:text-2xl md:text-2xl font-extrabold text-red-600 hover:text-red-400 transition-colors duration-300"
-            onClick={() => setOpen(false)}
-          >
-            Gourav Kashyap
-          </NavLink> 
+    <AnimatePresence>
+      {visible && (
+        <motion.header
+          className="fixed top-0 left-0 w-full z-50"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.4 }}
+        >
+          <nav className="w-full bg-transparent">
+            <div className="container mx-auto px-4 sm:px-6 md:px-10 py-3 md:py-4 flex items-center justify-between">
+              {/* Logo */}
+              <NavLink
+                to="/"
+                className="text-xl sm:text-2xl md:text-2xl font-extrabold text-red-600 hover:text-red-400 transition-colors duration-300"
+                onClick={() => setOpen(false)}
+              >
+                Gourav Kashyap
+              </NavLink>
 
-          {/* Center Menu Button */}
-          <div className="flex-1 flex justify-center max-w-xs">
-            <button
-              onClick={() => setOpen((s) => !s)}
-              aria-expanded={open}
-              aria-label="Open menu"
-              className="relative inline-flex items-center justify-center px-4 sm:px-6 py-2 rounded-full border border-red-500/30 bg-red-600 hover:bg-red-700  backdrop-blur-md shadow-lg hover:scale-105 transform transition active:scale-95"
-            >
-              <span className="hidden md:inline text-white font-semibold tracking-wide text-sm sm:text-base">MENU</span>
-              <span className="md:hidden inline-flex flex-col gap-1">
-                <span className={`w-5 sm:w-6 h-0.5 bg-white block transition-transform duration-300 ${open ? 'rotate-45 translate-y-1.5' : ''}`} />
-                <span className={`w-5 sm:w-6 h-0.5 bg-white block transition-opacity duration-300 ${open ? 'opacity-0' : 'opacity-100'}`} />
-                <span className={`w-5 sm:w-6 h-0.5 bg-white block transition-transform duration-300 ${open ? '-rotate-45 -translate-y-1.5' : ''}`} />
-              </span>
-            </button>
-          </div>
-
-          {/* Desktop Contact Button */}
-          <NavLink
-            to="/contact"
-            className="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
-          >
-            Reach Out
-          </NavLink>
-
-          {/* Mobile Contact Button */}
-          <NavLink
-            to="/contact"
-            className="md:hidden bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg shadow-md transition-all duration-300 text-sm active:scale-95"
-            onClick={() => setOpen(false)}
-          >
-            Contact
-          </NavLink>
-        </div>
-      </nav>
-
-      {/* Menu Overlay - Works on both desktop and mobile */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="fixed inset-0 z-40 flex items-start justify-center"
-            variants={overlayVariant}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            onMouseDown={onOverlayMouseDown}
-          >
-            <motion.div
-              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-              aria-hidden
-            />
-
-            <motion.div
-              ref={panelRef}
-              className="relative w-full max-w-4xl mx-auto mt-10 md:mt-20 rounded-b-2xl overflow-hidden border border-red-500/20"
-              variants={panelVariant}
-            >
-              <div className="bg-gradient-to-b from-red-900/90 to-black/80 px-6 sm:px-8 py-8 md:py-12 relative">
-
-                {/* Close Button */}
+              {/* Center Menu Button */}
+              <div className="flex-1 flex justify-center max-w-xs">
                 <button
-                  onClick={() => setOpen(false)}
-                  className="absolute top-4 right-4 text-white text-2xl md:text-3xl leading-none hover:text-red-400 transition-colors duration-300 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full hover:bg-white/10"
-                  aria-label="Close menu"
+                  onClick={() => setOpen((s) => !s)}
+                  aria-expanded={open}
+                  aria-label="Open menu"
+                  className="relative inline-flex items-center justify-center px-4 sm:px-6 py-2 rounded-full border border-red-500/30 bg-red-600 hover:bg-red-700 backdrop-blur-md shadow-lg hover:scale-105 transform transition active:scale-95"
                 >
-                  ×
+                  <span className="hidden md:inline text-white font-semibold tracking-wide text-sm sm:text-base">MENU</span>
+                  <span className="md:hidden inline-flex flex-col gap-1">
+                    <span className={`w-5 sm:w-6 h-0.5 bg-white block transition-transform duration-300 ${open ? "rotate-45 translate-y-1.5" : ""}`} />
+                    <span className={`w-5 sm:w-6 h-0.5 bg-white block transition-opacity duration-300 ${open ? "opacity-0" : "opacity-100"}`} />
+                    <span className={`w-5 sm:w-6 h-0.5 bg-white block transition-transform duration-300 ${open ? "-rotate-45 -translate-y-1.5" : ""}`} />
+                  </span>
                 </button>
-
-                {/* Desktop Grid Layout */}
-                <motion.ul className="hidden md:grid grid-cols-2 gap-6 text-center">
-                  {navLinks.map((link, i) => (
-                    <motion.li key={link.path} variants={linkVariant}>
-                      <NavLink
-                        to={link.path}
-                        onClick={() => setOpen(false)}
-                        className={({ isActive }) =>
-                          `block py-4 text-3xl font-semibold rounded-lg transition-all duration-300 hover:bg-red-500/20 hover:scale-105 ${
-                            isActive 
-                              ? "text-red-400 bg-red-500/10 border border-red-500/30" 
-                              : "text-white"
-                          }`
-                        }
-                      >
-                        {link.name}
-                      </NavLink>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-
-                {/* Mobile List Layout */}
-                <motion.ul className="md:hidden flex flex-col gap-4 text-center">
-                  {navLinks.map((link, i) => (
-                    <motion.li key={link.path} variants={linkVariant}>
-                      <NavLink
-                        to={link.path}
-                        onClick={() => setOpen(false)}
-                        className={({ isActive }) =>
-                          `block py-3 px-4 text-xl font-semibold rounded-lg transition-all duration-300 hover:bg-red-500/20 hover:scale-105 active:scale-95 ${
-                            isActive 
-                              ? "text-red-400 bg-red-500/10 border border-red-500/30" 
-                              : "text-white"
-                          }`
-                        }
-                      >
-                        {link.name}
-                      </NavLink>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-
-                {/* Mobile Contact Info - Only show on mobile */}
-                <motion.div 
-                  variants={linkVariant}
-                  className="md:hidden mt-6 pt-6 border-t border-red-500/20 text-center"
-                >
-                  <p className="text-gray-300 text-sm mb-2">Let's work together</p>
-                  <NavLink
-                    to="/contact"
-                    onClick={() => setOpen(false)}
-                    className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
-                  >
-                    Get In Touch
-                  </NavLink>
-                </motion.div>
-
               </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+
+              {/* Desktop Contact Button */}
+              <NavLink
+                to="/contact"
+                className="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                Reach Out
+              </NavLink>
+
+              {/* Mobile Contact Button */}
+              <NavLink
+                to="/contact"
+                className="md:hidden bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg shadow-md transition-all duration-300 text-sm active:scale-95"
+                onClick={() => setOpen(false)}
+              >
+                Contact
+              </NavLink>
+            </div>
+          </nav>
+
+          {/* Menu Overlay */}
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                className="fixed inset-0 z-40 flex items-start justify-center"
+                variants={overlayVariant}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                onMouseDown={onOverlayMouseDown}
+              >
+                <motion.div className="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden />
+                <motion.div
+                  ref={panelRef}
+                  className="relative w-full max-w-4xl mx-auto mt-10 md:mt-20 rounded-b-2xl overflow-hidden border border-red-500/20"
+                  variants={panelVariant}
+                >
+                  <div className="bg-gradient-to-b from-red-900/90 to-black/80 px-6 sm:px-8 py-8 md:py-12 relative">
+                    {/* Close Button */}
+                    <button
+                      onClick={() => setOpen(false)}
+                      className="absolute top-4 right-4 text-white text-2xl md:text-3xl leading-none hover:text-red-400 transition-colors duration-300 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full hover:bg-white/10"
+                      aria-label="Close menu"
+                    >
+                      ×
+                    </button>
+
+                    {/* Desktop Links */}
+               <motion.ul className="hidden md:grid grid-cols-2 gap-6 text-center">
+  {navLinks.map((link) => (
+    <motion.li key={link.path} variants={linkVariant}>
+      <NavLink
+        to={link.path}
+        onClick={() => setOpen(false)}
+        className={({ isActive }) =>
+          `block py-4 text-3xl font-semibold rounded-lg transition-all duration-300 hover:bg-red-500/20 hover:scale-105 ${
+            isActive
+              ? "text-red-400 bg-red-500/10 border border-red-500/30"
+              : "text-white"
+          }`
+        }
+      >
+        {link.name}
+      </NavLink>
+    </motion.li>
+  ))}
+</motion.ul>
+
+                    {/* Mobile Links */}
+                    <motion.ul className="md:hidden flex flex-col gap-4 text-center">
+                      {navLinks.map((link) => (
+                        <motion.li key={link.path} variants={linkVariant}>
+                          <NavLink
+                            to={link.path}
+                            onClick={() => setOpen(false)}
+                            className={({ isActive }) =>
+                              `block py-3 px-4 text-xl font-semibold rounded-lg transition-all duration-300 hover:bg-red-500/20 hover:scale-105 active:scale-95 ${
+                                isActive
+                                  ? "text-red-400 bg-red-500/10 border border-red-500/30"
+                                  : "text-white"
+                              }`
+                            }
+                          >
+                            {link.name}
+                          </NavLink>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.header>
+      )}
+    </AnimatePresence>
   );
 }

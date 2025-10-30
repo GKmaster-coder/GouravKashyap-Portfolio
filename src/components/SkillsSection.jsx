@@ -1,112 +1,51 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FaReact, 
-  FaNodeJs, 
-  FaGitAlt, 
+import {
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
   FaJava,
   FaDatabase,
-  FaFire
+  FaAws,
+  FaDocker,
+  FaFire, // Added missing import
 } from "react-icons/fa";
-import { 
-  SiNextdotjs, 
-  SiMongodb, 
-  SiExpress, 
-  SiSpringboot, 
+import {
+  SiMongodb,
+  SiExpress,
+  SiSpringboot,
   SiHibernate,
   SiMysql,
-  SiPostgresql,
   SiJavascript,
-  SiTypescript,
-  SiTailwindcss
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiBootstrap,
+  SiRedux,
+  SiVercel,
 } from "react-icons/si";
 
 const SkillsSection = () => {
   const skills = [
-    {
-      name: "React",
-      icon: <FaReact className="text-4xl text-red-400" />,
-      color: "from-red-500/20 to-red-600/10",
-      borderColor: "border-red-400/40"
-    },
-    {
-      name: "Next.js",
-      icon: <SiNextdotjs className="text-4xl text-red-300" />,
-      color: "from-red-400/20 to-red-500/10",
-      borderColor: "border-red-300/40"
-    },
-    {
-      name: "Node.js",
-      icon: <FaNodeJs className="text-4xl text-red-500" />,
-      color: "from-red-500/20 to-red-600/10",
-      borderColor: "border-red-500/40"
-    },
-    {
-      name: "Express.js",
-      icon: <SiExpress className="text-4xl text-red-300" />,
-      color: "from-red-400/20 to-red-500/10",
-      borderColor: "border-red-300/40"
-    },
-    {
-      name: "MongoDB",
-      icon: <SiMongodb className="text-4xl text-red-400" />,
-      color: "from-red-400/20 to-red-500/10",
-      borderColor: "border-red-400/40"
-    },
-    {
-      name: "Java",
-      icon: <FaJava className="text-4xl text-red-500" />,
-      color: "from-red-500/20 to-red-600/10",
-      borderColor: "border-red-500/40"
-    },
-    {
-      name: "Spring Boot",
-      icon: <SiSpringboot className="text-4xl text-red-400" />,
-      color: "from-red-400/20 to-red-500/10",
-      borderColor: "border-red-400/40"
-    },
-    {
-      name: "Hibernate",
-      icon: <SiHibernate className="text-4xl text-red-300" />,
-      color: "from-red-300/20 to-red-400/10",
-      borderColor: "border-red-300/40"
-    },
-    {
-      name: "MySQL",
-      icon: <SiMysql className="text-4xl text-red-400" />,
-      color: "from-red-400/20 to-red-500/10",
-      borderColor: "border-red-400/40"
-    },
-    {
-      name: "PostgreSQL",
-      icon: <SiPostgresql className="text-4xl text-red-300" />,
-      color: "from-red-300/20 to-red-400/10",
-      borderColor: "border-red-300/40"
-    },
-    {
-      name: "Git",
-      icon: <FaGitAlt className="text-4xl text-red-500" />,
-      color: "from-red-500/20 to-red-600/10",
-      borderColor: "border-red-500/40"
-    },
-    {
-      name: "JavaScript",
-      icon: <SiJavascript className="text-4xl text-red-400" />,
-      color: "from-red-400/20 to-red-500/10",
-      borderColor: "border-red-400/40"
-    },
-    {
-      name: "TypeScript",
-      icon: <SiTypescript className="text-4xl text-red-500" />,
-      color: "from-red-500/20 to-red-600/10",
-      borderColor: "border-red-500/40"
-    },
-    {
-      name: "Tailwind CSS",
-      icon: <SiTailwindcss className="text-4xl text-red-300" />,
-      color: "from-red-300/20 to-red-400/10",
-      borderColor: "border-red-300/40"
-    }
+    { name: "Java", icon: <FaJava className="text-4xl text-red-500" />, color: "from-red-500/20 to-red-600/10", borderColor: "border-red-500/40" },
+    { name: "JavaScript (ES6+)", icon: <SiJavascript className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "React.js", icon: <FaReact className="text-4xl text-red-400" />, color: "from-red-500/20 to-red-600/10", borderColor: "border-red-400/40" },
+    { name: "Node.js", icon: <FaNodeJs className="text-4xl text-red-500" />, color: "from-red-500/20 to-red-600/10", borderColor: "border-red-500/40" },
+    { name: "Express.js", icon: <SiExpress className="text-4xl text-red-300" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-300/40" },
+    { name: "Spring Boot", icon: <SiSpringboot className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "Hibernate", icon: <SiHibernate className="text-4xl text-red-300" />, color: "from-red-300/20 to-red-400/10", borderColor: "border-red-300/40" },
+    { name: "HTML5", icon: <SiHtml5 className="text-4xl text-red-500" />, color: "from-red-500/20 to-red-600/10", borderColor: "border-red-500/40" },
+    { name: "CSS3", icon: <SiCss3 className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "Bootstrap", icon: <SiBootstrap className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-4xl text-red-300" />, color: "from-red-300/20 to-red-400/10", borderColor: "border-red-300/40" },
+    { name: "Redux (Basics)", icon: <SiRedux className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "MySQL", icon: <SiMysql className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "MongoDB (Basics)", icon: <SiMongodb className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "Git & GitHub", icon: <FaGitAlt className="text-4xl text-red-500" />, color: "from-red-500/20 to-red-600/10", borderColor: "border-red-500/40" },
+    { name: "Postman", icon: <FaDatabase className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "AWS (Basics)", icon: <FaAws className="text-4xl text-red-500" />, color: "from-red-500/20 to-red-600/10", borderColor: "border-red-500/40" },
+    { name: "Docker", icon: <FaDocker className="text-4xl text-red-400" />, color: "from-red-400/20 to-red-500/10", borderColor: "border-red-400/40" },
+    { name: "VS Code & Eclipse", icon: <SiVercel className="text-4xl text-red-300" />, color: "from-red-300/20 to-red-400/10", borderColor: "border-red-300/40" },
   ];
 
   // Duplicate the array for seamless loop
@@ -119,12 +58,19 @@ const SkillsSection = () => {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
+        @keyframes marquee-reverse {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
         @keyframes pulse-glow {
           0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
           50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
         }
         .animate-marquee {
           animation: marquee 30s linear infinite;
+        }
+        .animate-marquee-reverse {
+          animation: marquee-reverse 30s linear infinite;
         }
         .marquee-pause:hover {
           animation-play-state: paused;
@@ -257,8 +203,8 @@ const SkillsSection = () => {
             viewport={{ once: true }}
             className="flex space-x-6 mt-8 marquee-pause"
           >
-            <div className="flex space-x-6 animate-marquee" style={{ animationDirection: 'reverse' }}>
-              {duplicatedSkills.reverse().map((skill, index) => (
+            <div className="flex space-x-6 animate-marquee-reverse">
+              {duplicatedSkills.map((skill, index) => (
                 <motion.div
                   key={`reverse-${skill.name}-${index}`}
                   whileHover={{ 
@@ -300,7 +246,8 @@ const SkillsSection = () => {
           </motion.div>
 
           {/* Gradient Overlays for Smooth Edges */}
-         
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-20" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-20" />
         </div>
 
         {/* Stats Section */}
@@ -312,9 +259,9 @@ const SkillsSection = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
         >
           {[
-            { number: "20+", label: "Projects Completed" },
+            { number: "10+", label: "Projects Completed" },
             { number: "15+", label: "Technologies" },
-            { number: "2+", label: "Years Experience" },
+            { number: "1", label: "Years Experience" },
             { number: "100%", label: "Code Quality" }
           ].map((stat, index) => (
             <motion.div
