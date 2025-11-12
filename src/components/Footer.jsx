@@ -1,6 +1,6 @@
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -17,27 +17,47 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div className="flex justify-center gap-6 text-2xl mb-6">
-          <a
-            href="#"
-            className="hover:text-red-400 transition duration-300"
-            aria-label="Twitter"
-          >
-            <FaXTwitter />
-          </a>
-          <a
-            href="#"
-            className="hover:text-red-400 transition duration-300"
+          {/* LinkedIn */}
+          <Link
+            to="https://www.linkedin.com/in/gourav-kashyap-0241722a3/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
+            className="hover:text-red-400 transition duration-300"
           >
             <FaLinkedin />
-          </a>
-          <a
-            href="#"
+          </Link>
+
+          {/* Instagram */}
+          <Link
+            to="https://www.instagram.com/gouravkashyap2468/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
             className="hover:text-red-400 transition duration-300"
+          >
+            <FaInstagram />
+          </Link>
+
+          {/* Gmail */}
+          <Link
+            to="mailto:gouravkashyap2468@gmail.com"
+            aria-label="Gmail"
+            className="hover:text-red-400 transition duration-300"
+          >
+            <FaEnvelope />
+          </Link>
+
+          {/* GitHub */}
+          <Link
+            to="https://github.com/GKmaster-coder"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub"
+            className="hover:text-red-400 transition duration-300"
           >
             <FaGithub />
-          </a>
+          </Link>
         </div>
 
         {/* Quote */}

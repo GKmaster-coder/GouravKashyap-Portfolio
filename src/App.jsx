@@ -10,7 +10,7 @@ import SkillsSection from "./components/SkillsSection";
 import Footer from "./components/Footer";
 import Feedback from "./components/Feedback";
 import Terminal from "./components/Terminal";
-
+import Project from "./components/Project";
 
 function ScrollToSection({ sections }) {
   const location = useLocation();
@@ -35,6 +35,7 @@ function App() {
     home: useRef(null),
     about: useRef(null),
     skills: useRef(null),
+    projects: useRef(null),
     contact: useRef(null),
   };
 
