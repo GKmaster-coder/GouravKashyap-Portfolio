@@ -87,7 +87,7 @@ const SkillsSection = () => {
 
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[#0a0a0a]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-500/15 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-linear(ellipse_at_center,var(--tw-gradient-stops))] from-red-500/15 via-transparent to-transparent" />
       
       {/* Animated Red Particles */}
       <div className="absolute inset-0">
@@ -162,7 +162,7 @@ const SkillsSection = () => {
                     y: -5,
                     transition: { type: "spring", stiffness: 300 }
                   }}
-                  className="flex-shrink-0 w-40 h-40 bg-gradient-to-br from-white/5 to-red-900/20 backdrop-blur-sm border border-red-500/20 rounded-2xl skill-card-glow flex flex-col items-center justify-center gap-3 p-4 cursor-pointer group relative overflow-hidden"
+                  className="shrink-0 w-40 h-40 bg-linear-to-br from-white/5 to-red-900/20 backdrop-blur-sm border border-red-500/20 rounded-2xl skill-card-glow flex flex-col items-center justify-center gap-3 p-4 cursor-pointer group relative overflow-hidden"
                 >
                   {/* Hover Gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
