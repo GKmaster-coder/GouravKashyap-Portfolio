@@ -13,6 +13,7 @@ export default function Navbar() {
     { name: "Skills", path: "/skills" },
     { name: "Projects", path: "/projects" },
     { name: "Contact", path: "/contact" },
+    {name:"All Projects",path:"/all-projects"}
   ];
 
   // 🔥 Hide navbar after scrolling down 2 sections (about 2 view heights)

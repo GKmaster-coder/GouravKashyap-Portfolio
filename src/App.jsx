@@ -1,145 +1,62 @@
-import React, { useState, useRef, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+// src/App.jsx
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 import IntroAnimation from "./components/IntroAnimation";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import About from "./components/About";
-import ContactSpace from "./components/ContactSpace";
-import SkillsSection from "./components/SkillsSection";
-import Footer from "./components/Footer";
-import Feedback from "./components/Feedback";
-import Terminal from "./components/Terminal";
-import Project from "./components/Project";
+import HomePage from "./pages/HomePage";
+import AllProjects from "./pages/AllProjects";
 
-function ScrollToSection({ sections }) {
+// ✅ Wrapper to manage intro only on homepage
+function AppContent() {
   const location = useLocation();
+  const [showIntro, setShowIntro] = useState(false);
 
+  // Show intro only if we're on the homepage
   useEffect(() => {
-    const path = location.pathname.replace("/", "");
-    if (path === "") {
-      sections.home.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (sections[path]) {
-      sections[path].current?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname === "/") {
+      setShowIntro(true);
+    } else {
+      setShowIntro(false);
     }
-  }, [location, sections]);
-
-  return null;
-}
-
-function App() {
-  const [showIntro, setShowIntro] = useState(true);
-
-  // ✅ Create refs for each section
-  const sections = {
-    home: useRef(null),
-    about: useRef(null),
-    skills: useRef(null),
-    projects: useRef(null),
-    contact: useRef(null),
-  };
+  }, [location.pathname]);
 
   return (
-    <Router>
-      {/* Intro Animation */}
+    <>
+      {/* ✅ Only show IntroAnimation on homepage */}
       {showIntro && <IntroAnimation onFinish={() => setShowIntro(false)} />}
 
       {!showIntro && (
         <>
-        
           <Navbar />
 
-          {/* Scroll to section when route changes */}
           <Routes>
-            <Route path="/*" element={<ScrollToSection sections={sections} />} />
+            {/* ✅ Homepage */}
+            <Route path="/" element={<HomePage />} />
+
+            {/* ✅ All Projects page */}
+            <Route path="/all-projects" element={<AllProjects />} />
+
+            {/* Optional fallback */}
+            <Route path="*" element={<HomePage />} />
           </Routes>
-
-          {/* ✅ All sections rendered on one page */}
-          <div ref={sections.home}>
-            <HeroSection />
-          </div>
-
-          <div ref={sections.about}>
-            <About />
-          </div>
-
-          <div ref={sections.skills}>
-            <SkillsSection />
-          </div>
-
-          <Terminal />
-          <Feedback />
-
-          <div ref={sections.contact}>
-            <ContactSpace />
-          </div>
-
-          <Footer />
         </>
       )}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
 
 export default App;
-
-
-
-
-
-// import React, { useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// import IntroAnimation from "./components/IntroAnimation";
-// import Navbar from "./components/Navbar";
-// import HeroSection from "./components/HeroSection";
-// import About from "./components/About";
-// import ContactSpace from "./components/ContactSpace";
-// import SkillsSection from "./components/SkillsSection";
-// import Footer from "./components/Footer";
-// import Project from "./components/Project";
-// import Feedback from "./components/Feedback";
-// import Terminal from "./components/Terminal";
-// import ScrollToTop from "./components/ScrollToTop";
-
-// function App() {
-//   const [showIntro, setShowIntro] = useState(true);
-
-//   return (
-//     <Router>
-//       <ScrollToTop/>
-//       {/* ✅ Intro Animation (Only shows once) */}
-//       {showIntro && <IntroAnimation onFinish={() => setShowIntro(false)} />}
-
-//       {/* ✅ Main UI (hidden until intro finishes) */}
-//       {!showIntro && (
-//         <>
-//           <Navbar />
-
-//           <Routes>
-//             {/* ✅ Show Hero only on Home route */}
-//             <Route path="/" element={<HeroSection />} />
-
-//             {/* ✅ Other routes (if you want to navigate later) */}
-//             <Route path="/about" element={<About />} />
-//             <Route path="/skills" element={<SkillsSection />} />
-//             <Route path="/contact" element={<ContactSpace />} />
-            
-//           </Routes>
-
-//           {/* ✅ These sections will appear on ALL pages (optional: can move them into routes if needed) */}
-//           <About />
-//           <SkillsSection />
-//           {/* <Project/> */}
-//           <Terminal/>
-//           <Feedback/>
-//           <ContactSpace />
-//           <Footer />
-//         </>
-//       )}
-//     </Router>
-//   );
-// }
-
-// export default App;
-
