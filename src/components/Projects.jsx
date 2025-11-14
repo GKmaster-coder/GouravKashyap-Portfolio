@@ -1,42 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { projects } from "../data/projectsData";
 
 const Projects = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description:
-        "A full-stack e-commerce solution with React and Node.js featuring user authentication, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      link: "/projects/ecommerce",
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "Productivity app with real-time collaboration features, drag-and-drop interface, and progress tracking.",
-      tech: ["React", "Firebase", "Material-UI", "WebSockets"],
-      link: "/projects/taskapp",
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description:
-        "Real-time weather monitoring with beautiful visualizations, location-based forecasts, and severe weather alerts.",
-      tech: ["React", "API", "Chart.js", "Geolocation"],
-      link: "/projects/weather",
-    },
-    {
-      id: 4,
-      title: "Portfolio Website",
-      description:
-        "Responsive portfolio built with modern web technologies, featuring smooth animations and optimized performance.",
-      tech: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
-      link: "/projects/portfolio",
-    },
-  ];
-
   return (
     <section
       id="projects"
@@ -122,6 +88,7 @@ const Projects = () => {
 
                     <motion.a
                       href={project.link}
+                      target="_blank"
                       className="bg-linear-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-4 py-2 rounded-lg font-semibold text-sm shadow-lg shadow-red-600/20 transition-all duration-300 flex items-center gap-1"
                       whileHover={{
                         scale: 1.05,

@@ -10,6 +10,25 @@ const Terminal = () => {
   ]);
   const terminalRef = useRef(null);
 
+  // Function to handle resume download
+  const downloadResume = () => {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    
+    // Path to your resume file (update this path to your actual resume file)
+    const resumeUrl = '/gourav-kashyap-Cv.pdf'; // or '/Gourav_Kashyap_Resume.pdf'
+    
+    // Set the download attributes
+    link.href = resumeUrl;
+    link.download = 'Gourav_Kashyap_Resume.pdf'; // Name of the downloaded file
+    link.target = '_blank';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const commands = {
     help: {
       execute: () => [
@@ -19,6 +38,7 @@ const Terminal = () => {
         { type: "command", text: "projects   - See my projects" },
         { type: "command", text: "experience - View my work experience" },
         { type: "command", text: "contact    - Get contact information" },
+        { type: "command", text: "resume     - Download my resume" },
         { type: "command", text: "clear      - Clear the terminal" },
       ],
     },
@@ -38,6 +58,7 @@ const Terminal = () => {
     projects: {
       execute: () => [
         { type: "system", text: "Highlighted Projects:" },
+
         {
           type: "project",
           text: (
@@ -48,30 +69,64 @@ const Terminal = () => {
                 target="_blank"
                 className="text-red-400 underline hover:text-red-300"
               >
-                E-Commerce Website
+                E-Commerce Website (Java + React)
               </Link>{" "}
-              — React + Spring Boot + MySQL full-stack app featuring user auth, shopping cart & admin panel.
+              — Full-stack e-commerce system using React, Spring Boot, Hibernate & Razorpay.
             </>
           ),
         },
+
         {
           type: "project",
           text: (
             <>
               •{" "}
-              <span className="text-red-400">Shape Based Game</span> — Java OOP project teaching 2D & 3D shapes with inheritance, interfaces & polymorphism.
+              <Link
+                to="https://majorsdspgamc.com/"
+                target="_blank"
+                className="text-red-400 underline hover:text-red-300"
+              >
+                Major SD Singh Ayurvedic Medical College Website
+              </Link>{" "}
+              — Official MERN stack college website built during internship.
             </>
           ),
         },
+
         {
           type: "project",
           text: (
             <>
               •{" "}
-              <span className="text-red-400">Product Management System</span> — Java + MySQL CRUD system using JDBC, Collection Framework & advanced search.
+              <Link
+                to="https://gourav-kashyap-portfolio.vercel.app/"
+                target="_blank"
+                className="text-red-400 underline hover:text-red-300"
+              >
+                Portfolio Website
+              </Link>{" "}
+              — Modern animated portfolio built with React, Tailwind & Framer Motion.
             </>
           ),
         },
+
+        {
+          type: "project",
+          text: (
+            <>
+              •{" "}
+              <Link
+                to="https://github.com/GKmaster-coder/Amazon_clone.com.git"
+                target="_blank"
+                className="text-red-400 underline hover:text-red-300"
+              >
+                Amazon Shopping Website Clone
+              </Link>{" "}
+              — Pixel-perfect Amazon UI clone using HTML & CSS.
+            </>
+          ),
+        },
+
       ],
     },
 
@@ -150,6 +205,20 @@ const Terminal = () => {
         },
         { type: "contact", text: "• Location: Delhi, India" },
       ],
+    },
+
+    resume: {
+      execute: () => {
+        // Trigger the download
+        downloadResume();
+        
+        return [
+          { type: "system", text: "Downloading resume..." },
+          { type: "system", text: "Resume download started!" },
+          { type: "system", text: "File: Gourav_Kashyap_Resume.pdf" },
+          { type: "system", text: "If download doesn't start automatically, check your browser's download folder." },
+        ];
+      },
     },
   };
 
