@@ -187,7 +187,7 @@ const HeroSection = ({ className = "" }) => {
                 <span className="text-white">Hello, I'm</span>
                 <br />
                 <span className="bg-linear-to-r from-red-400 to-rose-400 bg-clip-text text-transparent">
-                  Gaurav Kashyap
+                  Gourav Kashyap
                 </span>
               </motion.h2>
 
