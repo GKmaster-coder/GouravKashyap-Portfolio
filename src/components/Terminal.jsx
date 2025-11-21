@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { projects } from "../data/allProjectsData";
 
 const Terminal = () => {
   const [input, setInput] = useState("");
@@ -55,80 +56,36 @@ const Terminal = () => {
       ],
     },
 
-    projects: {
-      execute: () => [
-        { type: "system", text: "Highlighted Projects:" },
+  projects: {
+  execute: () => {
+    const output = [
+      { type: "system", text: "Highlighted Projects:" }
+    ];
 
-        {
-          type: "project",
-          text: (
-            <>
-              •{" "}
-              <Link
-                to="https://github.com/GKmaster-coder/Ecommerce-Website-BCA-Final-Year-Project.git"
-                target="_blank"
-                className="text-red-400 underline hover:text-red-300"
-              >
-                E-Commerce Website (Java + React)
-              </Link>{" "}
-              — Full-stack e-commerce system using React, Spring Boot, Hibernate & Razorpay.
-            </>
-          ),
-        },
+    // Loop through imported project data
+    projects.forEach((p) => {
+      output.push({
+        type: "project",
+        text: (
+          <>
+            •{" "}
+            <Link
+              to={p.link}
+              target="_blank"
+              className="text-red-400 underline hover:text-red-300"
+            >
+              {p.title}
+            </Link>{" "}
+            — {p.description}
+          </>
+        ),
+      });
+    });
 
-        {
-          type: "project",
-          text: (
-            <>
-              •{" "}
-              <Link
-                to="https://majorsdspgamc.com/"
-                target="_blank"
-                className="text-red-400 underline hover:text-red-300"
-              >
-                Major SD Singh Ayurvedic Medical College Website
-              </Link>{" "}
-              — Official MERN stack college website built during internship.
-            </>
-          ),
-        },
+    return output;
+  },
+},
 
-        {
-          type: "project",
-          text: (
-            <>
-              •{" "}
-              <Link
-                to="https://gourav-kashyap-portfolio.vercel.app/"
-                target="_blank"
-                className="text-red-400 underline hover:text-red-300"
-              >
-                Portfolio Website
-              </Link>{" "}
-              — Modern animated portfolio built with React, Tailwind & Framer Motion.
-            </>
-          ),
-        },
-
-        {
-          type: "project",
-          text: (
-            <>
-              •{" "}
-              <Link
-                to="https://github.com/GKmaster-coder/Amazon_clone.com.git"
-                target="_blank"
-                className="text-red-400 underline hover:text-red-300"
-              >
-                Amazon Shopping Website Clone
-              </Link>{" "}
-              — Pixel-perfect Amazon UI clone using HTML & CSS.
-            </>
-          ),
-        },
-
-      ],
-    },
 
     experience: {
       execute: () => [

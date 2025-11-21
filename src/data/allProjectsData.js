@@ -34,7 +34,7 @@ export const projects = [
         title: "Amazon Shopping Website Clone",
         description:
             "A pixel-perfect Amazon UI clone built with HTML and CSS, replicating home page, product grid, and all core layouts.",
-        image: "/images/amazon.jpg",
+        image: "/assets/projects/amazonclone.webp",
         category: "Frontend",
         tech: ["HTML", "CSS"],
         link: "https://github.com/GKmaster-coder/Amazon_clone.com.git",
@@ -46,19 +46,20 @@ export const projects = [
             "A modern doctor appointment website featuring smooth animations, interactive UI, dynamic content sections, and a responsive design. Includes appointment booking, doctor details, and a fully animated user experience built with the MERN stack.",
         image: "/assets/projects/doctor-web.png",
         category: "Full Stack",
-        tech: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS","motion","GSAP"],
+        tech: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "motion", "GSAP"],
         link: "https://yash-pandey-web-tau.vercel.app/",
     },
     {
         id: 6,
-        title: "Fitness & Diet Planner",
+        title: "Dental College, Azamgarh Website",
         description:
-            "Full-stack fitness tracking system with BMI calculator, daily logs, nutrition tracking, and graphical progress charts.",
-        image: "/images/fitness.jpg",
-        category: "Full Stack",
-        tech: ["React", "Node.js", "Express", "MongoDB"],
-        link: "#",
-    },
+            "A fully responsive and visually polished frontend website built for Dental College, Azamgarh. The project features smooth animations, interactive UI components, dynamic content sections, an optimized layout, and seamless navigation. Developed using modern frontend technologies with GSAP and Framer Motion to enhance the overall user experience.",
+        image: "/assets/projects/dentalcollege.webp",
+        category: "Frontend",
+        tech: ["React", "Tailwind CSS", "Framer Motion", "GSAP"],
+        link: "https://dentalcollegeazamgarh.in/"
+    }
+    ,
     {
         id: 7,
         title: "Weather Dashboard",
