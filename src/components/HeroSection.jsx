@@ -6,7 +6,6 @@ import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from "react-icons/fa";
 import useTypewriter from "../hooks/useTypewriter";
 import heroImg from "/assets/Hero1.png";
 
-
 const particlesOptions = {
   background: { color: { value: "transparent" } },
   fpsLimit: 120,
@@ -134,7 +133,7 @@ const HeroSection = ({ className = "" }) => {
         {Array.from({ length: 4 }).map((_, i) => (
           <div
             key={i}
-            className="absolute h-[1px] bg-gradient-to-r from-transparent via-red-400 to-transparent"
+            className="absolute h-px bg-linear-to-r from-transparent via-red-400 to-transparent"
             style={{
               top: `${15 + i * 25}%`,
               left: `${-20 + i * 10}%`,
@@ -156,9 +155,32 @@ const HeroSection = ({ className = "" }) => {
       <div className="container mx-auto px-6 lg:px-20 relative z-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 min-h-screen py-10 lg:py-16">
 
+          {/* MOBILE IMAGE - Shown first on mobile, hidden on desktop */}
+          <motion.div
+            className="w-full flex justify-center mb-8 lg:hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.div className="relative">
+              {/* Glow for mobile image */}
+              <div className="absolute inset-0 bg-linear-to-r from-red-500/30 to-rose-500/20 rounded-full blur-3xl opacity-40 animate-pulse" />
+              
+              {/* Image for mobile */}
+              <motion.img
+                src={heroImg}
+                alt="Gourav Kashyap"
+                className="w-48 h-auto object-contain drop-shadow-2xl"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+              />
+            </motion.div>
+          </motion.div>
+
           {/* Left Content */}
           <motion.div
-            className="w-full lg:w-1/2 order-2 lg:order-1"
+            className="w-full lg:w-1/2 lg:order-1"
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -224,11 +246,11 @@ const HeroSection = ({ className = "" }) => {
               >
                 <motion.button
                   onClick={scrollToProjects}
-                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold shadow-2xl overflow-hidden backdrop-blur-sm"
+                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-linear-to-r from-red-600 to-rose-600 text-white font-semibold shadow-2xl overflow-hidden backdrop-blur-sm"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   <span className="relative z-10">View My Work</span>
                   <FaArrowDown className="relative z-10 group-hover:translate-y-1 transition-transform" />
                 </motion.button>
@@ -242,7 +264,6 @@ const HeroSection = ({ className = "" }) => {
                 >
                   Download Resume
                 </motion.a>
-
               </motion.div>
 
               {/* Social Icons */}
@@ -275,9 +296,9 @@ const HeroSection = ({ className = "" }) => {
             </div>
           </motion.div>
 
-          {/* RIGHT IMAGE */}
+          {/* DESKTOP IMAGE - Hidden on mobile, shown on desktop */}
           <motion.div
-            className="w-full lg:w-1/2 order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="hidden lg:flex lg:w-1/2 lg:order-2 justify-center lg:justify-end"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -291,7 +312,7 @@ const HeroSection = ({ className = "" }) => {
               }}
             >
               {/* Enhanced Glow */}
-              <div className="absolute inset-0 -inset-4 bg-gradient-to-r from-red-500/30 to-rose-500/20 rounded-full blur-3xl opacity-40 animate-pulse" />
+              <div className="absolute inset-0 bg-linear-to-r from-red-500/30 to-rose-500/20 rounded-full blur-3xl opacity-40 animate-pulse" />
 
               {/* Star Cluster around image */}
               <div className="absolute -top-4 -right-4 w-8 h-8">
@@ -300,17 +321,15 @@ const HeroSection = ({ className = "" }) => {
                 <div className="absolute bottom-0 left-2 w-1 h-1 bg-red-300 rounded-full twinkle-star" style={{ animationDelay: '2s' }} />
               </div>
 
-              {/* Image */}
-              <div className="hidden lg:flex justify-center lg:justify-start relative z-10">
-                <motion.img
-                  src={heroImg}
-                  alt="Gourav Kashyap"
-                  className="w-64 sm:w-64 md:w-90 h-auto object-contain drop-shadow-2xl"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-                />
-              </div>
+              {/* Desktop Image */}
+              <motion.img
+                src={heroImg}
+                alt="Gourav Kashyap"
+                className="w-64 sm:w-64 md:w-90 h-auto object-contain drop-shadow-2xl"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+              />
             </motion.div>
           </motion.div>
 
@@ -337,7 +356,7 @@ const HeroSection = ({ className = "" }) => {
       </div>
 
       {/* Enhanced Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-slate-900 via-transparent to-transparent pointer-events-none" />
     </section>
   );
 };
