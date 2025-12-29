@@ -31,6 +31,7 @@ const HomePage = () => {
     home: useRef(null),
     about: useRef(null),
     skills: useRef(null),
+    experience: useRef(null),
     projects: useRef(null),
     contact: useRef(null),
   };
@@ -51,7 +52,10 @@ const HomePage = () => {
         <SkillsSection />
       </div>
 
-     <ExperienceSection2/>
+      <div ref={sections.experience}>
+        <ExperienceSection2 />
+      </div>
+
 
       <div ref={sections.projects}>
         <Projects />

@@ -8,14 +8,16 @@ export default function Navbar() {
   const panelRef = useRef(null);
   const scrollTimer = useRef(null); // Ref for the scroll timeout
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Skills", path: "/skills" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
-    { name: "All Projects", path: "/all-projects" }
-  ];
+const navLinks = [ 
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Skills", path: "/skills" },
+  { name: "Experience", path: "/experience" },
+  { name: "Projects", path: "/projects" },
+  { name: "All Projects", path: "/all-projects" },
+  { name: "Contact", path: "/contact" }
+];
+
 
   // Logic to show/hide navbar based on scroll activity
   useEffect(() => {
@@ -157,7 +159,7 @@ export default function Navbar() {
                   variants={panelVariant}
                   className="relative w-full max-w-md h-full bg-neutral-950 border-l border-red-500/20 shadow-2xl flex flex-col"
                 >
-                  <div className="flex flex-col h-full pt-24 px-8 pb-12 overflow-y-auto">
+                  <div className="flex flex-col h-full pt-15 px-8 pb-10 overflow-y-auto">
                     <p className="text-red-500 text-xs font-bold tracking-[0.2em] uppercase mb-8 opacity-70">Navigation</p>
                     <motion.ul className="flex flex-col gap-4">
                       {navLinks.map((link) => (
@@ -178,8 +180,8 @@ export default function Navbar() {
                     </motion.ul>
                     <div className="mt-auto pt-10 border-t border-white/10">
                       <p className="text-gray-500 text-sm mb-2">Say Hello</p>
-                      <a href="mailto:gourav@portfolio.com" className="text-white hover:text-red-500 transition-colors">
-                        gourav@portfolio.com
+                      <a href="mailto:gouravkashyap2468@gmail.com" className="text-white hover:text-red-500 transition-colors">
+                        gouravkashyap2468@gmail.com
                       </a>
                     </div>
                   </div>

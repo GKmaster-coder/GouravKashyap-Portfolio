@@ -244,10 +244,6 @@ const SkillsSection = () => {
               ))}
             </div>
           </motion.div>
-
-          {/* Gradient Overlays for Smooth Edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-slate-900 to-transparent z-20" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-slate-900 to-transparent z-20" />
         </div>
 
         {/* Stats Section */}
