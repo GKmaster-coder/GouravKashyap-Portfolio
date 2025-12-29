@@ -62,14 +62,15 @@ export const projects = [
     ,
     {
         id: 7,
-        title: "Weather Dashboard",
+        title: "Amrapali Ayurvedic Medical College & Hospital Website",
         description:
-            "A modern weather dashboard using OpenWeather API, featuring real-time forecasts and dynamic charts.",
-        image: "/images/weather.jpg",
+            "A fully responsive and visually polished frontend website built for Amrapali Ayurvedic Medical College & Hospital. The project features smooth animations, interactive UI components, dynamic content sections, an optimized layout, and seamless navigation. Developed using modern frontend technologies with GSAP and Framer Motion to enhance the overall user experience.",
+        image: "/assets/projects/amrapalicollege.webp",
         category: "Frontend",
-        tech: ["React", "API", "Chart.js"],
-        link: "#",
-    },
+        tech: ["React", "Tailwind CSS", "Framer Motion", "GSAP"],
+        link: "https://kaleidoscopic-halva-619928.netlify.app/"
+    }
+    ,
     {
         id: 8,
         title: "Doctor Appointment System",

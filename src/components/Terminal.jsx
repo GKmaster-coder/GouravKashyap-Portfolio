@@ -247,7 +247,7 @@ const Terminal = () => {
             <div className="w-3 h-3 rounded-full bg-red-400 border border-red-300"></div>
             <div className="w-3 h-3 rounded-full bg-red-300 border border-red-200"></div>
           </div>
-          <div className="text-red-400 ml-4 font-bold text-sm">gourav-portfolio-terminal</div>
+          <div className="text-red-400 ml-4 font-bold text-sm">GK-Terminal</div>
         </div>
 
         <div
@@ -256,7 +256,7 @@ const Terminal = () => {
         >
           <div className="mb-4 space-y-1">
             {output.map((line, index) => (
-              <div key={index} className={`leading-relaxed break-words ${getTextColor(line.type)}`}>
+              <div key={index} className={`leading-relaxed wrap-break-word ${getTextColor(line.type)}`}>
                 {line.text}
               </div>
             ))}

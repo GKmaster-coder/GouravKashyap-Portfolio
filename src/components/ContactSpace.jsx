@@ -103,7 +103,7 @@ const ContactSpace = () => {
         {Array.from({ length: 3 }).map((_, i) => (
           <div
             key={i}
-            className="absolute h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent shooting-star"
+            className="absolute h-px bg-linear-to-r from-transparent via-blue-400 to-transparent shooting-star"
             style={{
               top: `${20 + i * 30}%`,
               left: `${-10 + i * 15}%`,
@@ -167,10 +167,10 @@ const ContactSpace = () => {
             }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/15 rounded-3xl p-8 backdrop-blur-xl form-glow relative overflow-hidden">
+            <div className="bg-linear-to-br from-white/5 to-white/2 border border-white/15 rounded-3xl p-8 backdrop-blur-xl form-glow relative overflow-hidden">
               {/* Form background pattern */}
               <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent w-1/3 -skew-x-12 animate-pulse"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent w-1/3 -skew-x-12 animate-pulse"></div>
               </div>
               
               <div className="relative z-10">
@@ -183,7 +183,7 @@ const ContactSpace = () => {
                   >
                     <FaRocket className="text-white text-lg" />
                   </motion.div>
-                  <h2 className="text-4xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <h2 className="text-4xl font-bold bg-linear-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     Launch Your Project
                   </h2>
                 </div>
@@ -279,9 +279,9 @@ const ContactSpace = () => {
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-red-600 to-amber-700 hover:from-red-700 hover:to-amber-900 py-4 rounded-xl text-white font-semibold flex items-center justify-center gap-3 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
+                    className="w-full bg-linear-to-r from-red-600 to-amber-700 hover:from-red-700 hover:to-amber-900 py-4 rounded-xl text-white font-semibold flex items-center justify-center gap-3 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     <FaPaperPlane className="group-hover:translate-x-1 transition-transform duration-200" />
                     {isSubmitting ? "Launching..." : "Launch Message"}
                   </motion.button>

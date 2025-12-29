@@ -10,7 +10,15 @@ const Footer = () => {
 
       {/* Content */}
       <div className="relative text-center max-w-3xl mx-auto px-4">
-        <h2 className="text-5xl font-bold tracking-wide mb-2">Gaurav Kashyap</h2>
+        
+        {/* Logo Added Here */}
+        <img 
+          src="/logo2.png" 
+          alt="Logo" 
+          className="mx-auto mb-4 h-16 w-auto object-contain"
+        />
+
+        <h2 className="text-5xl font-bold tracking-wide mb-2">Gourav Kashyap</h2>
 
         {/* Underline effect */}
         <div className="w-24 h-[3px] bg-red-400 mx-auto mb-6"></div>
@@ -67,7 +75,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-sm text-gray-500">
-          © 2025 Gaurav Kashyap. All rights reserved.
+          © 2025 Gourav Kashyap. All rights reserved.
         </p>
       </div>
     </footer>

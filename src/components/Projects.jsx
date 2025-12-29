@@ -152,7 +152,7 @@ const Projects = () => {
           {/* Animated Glow Layer */}
           <div className="absolute inset-0 overflow-hidden rounded-3xl">
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-red-600/20 via-purple-600/15 to-blue-600/20 blur-3xl"
+              className="absolute inset-0 bg-linear-to-br from-red-600/20 via-purple-600/15 to-blue-600/20 blur-3xl"
               animate={{
                 opacity: [0.15, 0.25, 0.15],
                 scale: [1, 1.05, 1],
