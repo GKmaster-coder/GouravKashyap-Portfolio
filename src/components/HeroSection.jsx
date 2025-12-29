@@ -73,7 +73,7 @@ const HeroSection = ({ className = "" }) => {
   };
 
   return (
-    <section className={`relative overflow-hidden min-h-screen ${className}`}>
+    <section className={`relative overflow-hidden min-h-screen ${className} roboto`}>
       <style>{`
         @keyframes floatStar {
           0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }

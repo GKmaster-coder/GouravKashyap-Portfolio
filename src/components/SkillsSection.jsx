@@ -52,7 +52,7 @@ const SkillsSection = () => {
   const duplicatedSkills = [...skills, ...skills];
 
   return (
-    <section id="skills" className="relative py-20 bg-slate-900 overflow-hidden">
+    <section id="skills" className="relative py-20 bg-slate-900 overflow-hidden roboto">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
@@ -136,7 +136,7 @@ const SkillsSection = () => {
           </motion.div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My <span className="bg-gradient-to-r from-red-400 to-rose-400 bg-clip-text text-transparent">Tech Stack</span>
+            My <span className="bg-linear-to-r from-red-400 to-rose-400 bg-clip-text text-transparent">Tech Stack</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Technologies I use to bring ideas to life and build amazing digital experiences
@@ -165,11 +165,11 @@ const SkillsSection = () => {
                   className="shrink-0 w-40 h-40 bg-linear-to-br from-white/5 to-red-900/20 backdrop-blur-sm border border-red-500/20 rounded-2xl skill-card-glow flex flex-col items-center justify-center gap-3 p-4 cursor-pointer group relative overflow-hidden"
                 >
                   {/* Hover Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div className={`absolute inset-0 bg-linear-to-br ${skill.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                   
                   {/* Animated Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 to-transparent -skew-x-12 animate-pulse" />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-red-500/10 to-transparent -skew-x-12 animate-pulse" />
                   </div>
                   
                   {/* Icon */}
@@ -178,7 +178,7 @@ const SkillsSection = () => {
                   </div>
                   
                   {/* Name */}
-                  <span className="relative z-10 text-white font-semibold text-center group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-red-200 group-hover:to-rose-200 transition-all duration-300">
+                  <span className="relative z-10 text-white font-semibold text-center group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-red-200 group-hover:to-rose-200 transition-all duration-300">
                     {skill.name}
                   </span>
                   
@@ -212,14 +212,14 @@ const SkillsSection = () => {
                     y: -5,
                     transition: { type: "spring", stiffness: 300 }
                   }}
-                  className="flex-shrink-0 w-40 h-40 bg-gradient-to-br from-white/5 to-red-900/20 backdrop-blur-sm border border-red-500/20 rounded-2xl skill-card-glow flex flex-col items-center justify-center gap-3 p-4 cursor-pointer group relative overflow-hidden"
+                  className="shrink-0 w-40 h-40 bg-linear-to-br from-white/5 to-red-900/20 backdrop-blur-sm border border-red-500/20 rounded-2xl skill-card-glow flex flex-col items-center justify-center gap-3 p-4 cursor-pointer group relative overflow-hidden"
                 >
                   {/* Hover Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div className={`absolute inset-0 bg-linear-to-br ${skill.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                   
                   {/* Animated Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 to-transparent -skew-x-12 animate-pulse" />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-red-500/10 to-transparent -skew-x-12 animate-pulse" />
                   </div>
                   
                   {/* Icon */}
@@ -228,7 +228,7 @@ const SkillsSection = () => {
                   </div>
                   
                   {/* Name */}
-                  <span className="relative z-10 text-white font-semibold text-center group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-red-200 group-hover:to-rose-200 transition-all duration-300">
+                  <span className="relative z-10 text-white font-semibold text-center group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-red-200 group-hover:to-rose-200 transition-all duration-300">
                     {skill.name}
                   </span>
                   
@@ -246,8 +246,8 @@ const SkillsSection = () => {
           </motion.div>
 
           {/* Gradient Overlays for Smooth Edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-20" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-20" />
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-slate-900 to-transparent z-20" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-slate-900 to-transparent z-20" />
         </div>
 
         {/* Stats Section */}
@@ -273,7 +273,7 @@ const SkillsSection = () => {
               whileHover={{ scale: 1.05 }}
               className="text-center p-6 bg-red-900/20 backdrop-blur-sm border border-red-500/20 rounded-2xl skill-card-glow group hover:bg-red-900/30 transition-all duration-300"
             >
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-400 to-rose-400 bg-clip-text text-transparent group-hover:from-red-300 group-hover:to-rose-300 transition-all duration-300">
+              <div className="text-2xl md:text-3xl font-bold bg-linear-to-r from-red-400 to-rose-400 bg-clip-text text-transparent group-hover:from-red-300 group-hover:to-rose-300 transition-all duration-300">
                 {stat.number}
               </div>
               <div className="text-red-200/80 text-sm mt-2 group-hover:text-red-100 transition-colors duration-300">

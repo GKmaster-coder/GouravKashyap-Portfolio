@@ -72,7 +72,7 @@ const Project = () => {
 
     return (
         <>
-            <section id="projects" className="relative text-white" ref={scanRef}
+            <section id="projects" className="relative text-white roboto" ref={scanRef}
                 style={{
                     height: `${100 * projects.length}vh`,
                     backgroundColor: activeProjects.bgColor,

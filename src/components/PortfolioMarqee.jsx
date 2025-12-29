@@ -30,7 +30,7 @@ const PortfolioMarquee = () => {
   const repeatedSkills = [...skills, ...skills, ...skills];
 
   return (
-    <div className="relative w-full overflow-hidden py-8 bg-[#0a0a0a]">
+    <div className="relative w-full overflow-hidden py-8 bg-[#0a0a0a] roboto">
       <style>{`
         @keyframes scroll {
           from { transform: translateX(0); }

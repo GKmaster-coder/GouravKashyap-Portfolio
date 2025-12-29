@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden min-h-screen bg-[#0a0a0a] py-20 px-4 sm:px-6 lg:px-8"
+      className="relative overflow-hidden min-h-screen bg-[#0a0a0a] py-20 px-4 sm:px-6 lg:px-8 roboto"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
         {/* Left Side - Project Cards */}

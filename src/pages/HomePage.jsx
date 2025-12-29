@@ -9,6 +9,7 @@ import Projects from "../components/Projects";
 import Terminal from "../components/Terminal";
 import ContactSpace from "../components/ContactSpace";
 import Footer from "../components/Footer";
+import ExperienceSection2 from "../components/ExperienceSection2";
 
 function ScrollToSection({ sections }) {
   const location = useLocation();
@@ -49,6 +50,8 @@ const HomePage = () => {
       <div ref={sections.skills}>
         <SkillsSection />
       </div>
+
+     <ExperienceSection2/>
 
       <div ref={sections.projects}>
         <Projects />
