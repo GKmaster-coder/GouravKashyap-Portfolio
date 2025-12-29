@@ -75,7 +75,7 @@ const IntroAnimation = ({ onFinish }) => {
           {/* LOGO ZOOM MOTION */}
           {showLogo && (
             <motion.img
-              src="/logo2.png" // Ensure this path is correct in your public folder
+              src="https://res.cloudinary.com/dmhpenz2y/image/upload/v1767000071/logo2_kfnl2x.png" 
               alt="Logo"
               className="w-48 h-48 md:w-100 md:h-100 object-contain"
               initial={{ scale: 0, opacity: 0 }}

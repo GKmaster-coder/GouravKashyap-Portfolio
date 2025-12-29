@@ -4,7 +4,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from "react-icons/fa";
 import useTypewriter from "../hooks/useTypewriter";
-import heroImg from "/assets/Hero1.png";
+// import heroImg from "/assets/Hero1.png";
 
 const particlesOptions = {
   background: { color: { value: "transparent" } },
@@ -31,6 +31,8 @@ const particlesOptions = {
     }
   }
 };
+
+const heroImg ="https://res.cloudinary.com/dmhpenz2y/image/upload/v1767000247/Hero1_mgns8f.png"
 
 const HeroSection = ({ className = "" }) => {
   const roleText = useTypewriter(

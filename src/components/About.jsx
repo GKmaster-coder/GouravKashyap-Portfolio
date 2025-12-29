@@ -5,21 +5,21 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <main
-      className="min-h-screen w-full bg-gradient-to-br from-[#0a0a0a] to-[#1a0a0a] text-white px-6 sm:px-10 md:px-16 py-16 md:py-20 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24"
+      className="min-h-screen w-full bg-linear-to-br from-[#0a0a0a] to-[#1a0a0a] text-white px-6 sm:px-10 md:px-16 py-16 md:py-20 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24"
       role="main"
     >
       {/* Left: Profile Image */}
       <figure className="relative group w-full max-w-xs sm:max-w-sm md:max-w-md">
         <div className="rounded-3xl overflow-hidden border-2 border-red-500/40 shadow-2xl shadow-red-500/30 transition-all duration-700 group-hover:shadow-red-500/50 group-hover:border-red-500/60">
           <img
-            src={profile}
+            src={"https://res.cloudinary.com/dmhpenz2y/image/upload/v1767000176/about3_zglfoy.png"}
             alt="Gourav Kashyap portrait"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
         </div>
 
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-red-500/20 via-transparent to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 blur-xl"></div>
-        <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-20"></div>
+        <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-red-500/20 via-transparent to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 blur-xl"></div>
+        <div className="absolute -inset-4 rounded-3xl bg-linear-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-20"></div>
       </figure>
 
       {/* Right Content */}
@@ -27,11 +27,11 @@ const About = () => {
         
         {/* Header Section */}
         <header className="space-y-3">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent animate-gradient">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-linear-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent animate-gradient">
             Gourav Kashyap
           </h1>
 
-          <div className="w-16 sm:w-20 h-1 mx-auto md:mx-0 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+          <div className="w-16 sm:w-20 h-1 mx-auto md:mx-0 bg-linear-to-r from-red-500 to-red-600 rounded-full"></div>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-300">
             MERN & Java Full Stack Developer
@@ -58,7 +58,7 @@ const About = () => {
             ].map((stat, i) => (
               <article
                 key={i}
-                className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border border-red-500/30 rounded-2xl p-4 text-center transition-all duration-500 hover:border-red-500/60 hover:shadow-2xl hover:-translate-y-2"
+                className="bg-linear-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border border-red-500/30 rounded-2xl p-4 text-center transition-all duration-500 hover:border-red-500/60 hover:shadow-2xl hover:-translate-y-2"
               >
                 <p className="text-gray-400 text-sm">{stat.label}</p>
                 <h3 className="text-lg sm:text-xl font-bold">{stat.value}</h3>
@@ -74,10 +74,10 @@ const About = () => {
             href="https://github.com/GKmaster-coder"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl shadow-xl hover:-translate-y-1 transition-all duration-500 font-semibold"
+            className="group relative px-6 py-3 bg-linear-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-xl shadow-xl hover:-translate-y-1 transition-all duration-500 font-semibold"
           >
             View Projects
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-all duration-700"></div>
           </a>
 
           <Link to="/contact">
