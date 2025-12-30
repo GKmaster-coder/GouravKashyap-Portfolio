@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import { send } from "@emailjs/browser";
 import astronaut from "/assets/Astra.png";
 import { FaPaperPlane, FaRocket } from "react-icons/fa";
+import { useSnackbar } from "notistack";
 
 const ContactSpace = () => {
+   const { enqueueSnackbar } = useSnackbar();
   const {
     register,
     handleSubmit,
@@ -49,8 +51,18 @@ const ContactSpace = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       reset();
+
+       // Success toast
+      enqueueSnackbar("Message sent successfully! 🚀", {
+        variant: "success",
+      });
     } catch (err) {
       console.error(err);
+
+        // Error toast
+      enqueueSnackbar("Failed to send message. Please try again.", {
+        variant: "error",
+      });
     }
   };
 

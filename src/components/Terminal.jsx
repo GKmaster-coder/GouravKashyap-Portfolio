@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { projects } from "../data/allProjectsData";
+import { useSnackbar } from "notistack";
+
 
 const Terminal = () => {
   const [input, setInput] = useState("");
@@ -10,6 +12,8 @@ const Terminal = () => {
     { type: "system", text: "" },
   ]);
   const terminalRef = useRef(null);
+  const { enqueueSnackbar } = useSnackbar();
+
 
   // Function to handle resume download
   const downloadResume = () => {
@@ -28,6 +32,10 @@ const Terminal = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    
+  // Show success toast
+  enqueueSnackbar("Resume downloaded successfully! ", { variant: "success" });
   };
 
   const commands = {
