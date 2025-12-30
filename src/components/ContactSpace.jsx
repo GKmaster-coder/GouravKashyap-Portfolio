@@ -22,7 +22,7 @@ const ContactSpace = () => {
       let color = "white";
       if (colorIntensity > 0.8) color = "#60a5fa"; // blue
       if (colorIntensity > 0.9) color = "#f87171"; // red
-      
+
       return {
         left: Math.random() * 100 + "%",
         top: Math.random() * 100 + "%",
@@ -38,15 +38,15 @@ const ContactSpace = () => {
   const onSubmit = async (data) => {
     try {
       await send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: data.name,
           from_email: data.email,
           service_needed: data.service,
           message: data.message,
         },
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       reset();
     } catch (err) {
@@ -140,15 +140,15 @@ const ContactSpace = () => {
           <motion.div
             initial={{ opacity: 0, x: -60, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ 
+            transition={{
               duration: 1.2,
               ease: "easeOut"
             }}
             className="flex justify-center relative"
           >
             <div className="relative">
-              <motion.img 
-                src={astronaut} 
+              <motion.img
+                src={astronaut}
                 className="w-[420px] select-none relative z-10 astronaut-float"
                 style={{ animation: "floatAstronaut 6s ease-in-out infinite" }}
               />
@@ -161,7 +161,7 @@ const ContactSpace = () => {
           <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
+            transition={{
               duration: 0.8,
               delay: 0.3
             }}
@@ -172,7 +172,7 @@ const ContactSpace = () => {
               <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent w-1/3 -skew-x-12 animate-pulse"></div>
               </div>
-              
+
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <motion.div
@@ -201,7 +201,7 @@ const ContactSpace = () => {
                         className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/50 focus:outline-none focus:border-blue-500 input-glow transition-all duration-300"
                       />
                       {errors.name && (
-                        <motion.p 
+                        <motion.p
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           className="text-red-400 text-sm mt-2 flex items-center gap-1"
@@ -220,7 +220,7 @@ const ContactSpace = () => {
                         className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/50 focus:outline-none focus:border-blue-500 input-glow transition-all duration-300"
                       />
                       {errors.email && (
-                        <motion.p 
+                        <motion.p
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           className="text-red-400 text-sm mt-2 flex items-center gap-1"
@@ -244,7 +244,7 @@ const ContactSpace = () => {
                       <option value="Full Stack App" className="text-gray-700">Full Stack App</option>
                     </select>
                     {errors.service && (
-                      <motion.p 
+                      <motion.p
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-red-400 text-sm mt-2 flex items-center gap-1"
@@ -263,7 +263,7 @@ const ContactSpace = () => {
                       className="w-full bg-black/30 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/50 focus:outline-none focus:border-blue-500 input-glow transition-all duration-300 resize-none"
                     />
                     {errors.message && (
-                      <motion.p 
+                      <motion.p
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-red-400 text-sm mt-2 flex items-center gap-1"
