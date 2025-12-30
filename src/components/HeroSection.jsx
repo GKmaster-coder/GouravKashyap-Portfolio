@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown, FaWhatsapp } from "react-icons/fa";
 import useTypewriter from "../hooks/useTypewriter";
 // import heroImg from "/assets/Hero1.png";
 
@@ -32,7 +32,7 @@ const particlesOptions = {
   }
 };
 
-const heroImg ="https://res.cloudinary.com/dmhpenz2y/image/upload/v1767000247/Hero1_mgns8f.png"
+const heroImg = "https://res.cloudinary.com/dmhpenz2y/image/upload/v1767000247/Hero1_mgns8f.png"
 
 const HeroSection = ({ className = "" }) => {
   const roleText = useTypewriter(
@@ -167,7 +167,7 @@ const HeroSection = ({ className = "" }) => {
             <motion.div className="relative">
               {/* Glow for mobile image */}
               <div className="absolute inset-0 bg-linear-to-r from-red-500/30 to-rose-500/20 rounded-full blur-3xl opacity-40 animate-pulse" />
-              
+
               {/* Image for mobile */}
               <motion.img
                 src={heroImg}
@@ -278,6 +278,10 @@ const HeroSection = ({ className = "" }) => {
                 {[
                   { Icon: FaGithub, href: "https://github.com/GKmaster-coder" },
                   { Icon: FaLinkedin, href: "https://www.linkedin.com/in/gourav-kashyap-0241722a3/" },
+                  {
+                    Icon: FaWhatsapp,
+                    href: "https://wa.me/919899174113" // replace with your WhatsApp number
+                  },
                 ].map(({ Icon, href }, index) => (
                   <motion.a
                     key={href}
@@ -339,7 +343,7 @@ const HeroSection = ({ className = "" }) => {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5 }}
@@ -349,12 +353,13 @@ const HeroSection = ({ className = "" }) => {
             onClick={scrollToProjects}
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            whileHover={{ scale: 1.1, backgroundColor: 'rgba(239, 68, 68, 0.1)' }}
+            whileHover={{ scale: 1.1, backgroundColor: "rgba(239, 68, 68, 0.1)" }}
           >
             <span className="text-sm mb-2">Scroll to explore</span>
             <FaArrowDown className="text-lg" />
           </motion.div>
         </motion.div>
+
       </div>
 
       {/* Enhanced Bottom Fade */}
