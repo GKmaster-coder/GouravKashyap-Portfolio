@@ -102,7 +102,7 @@ const navLinks = [
                   alt="Logo" 
                   className="w-8 h-8 sm:w-12 sm:h-12 object-contain rounded-md shadow-sm"
                 />
-                <span className="text-xl sm:text-2xl font-extrabold text-red-600 hover:text-red-400 transition-colors duration-300">
+                <span className="text-lg sm:text-2xl font-extrabold text-red-600 hover:text-red-400 transition-colors duration-300">
                   Gourav Kashyap
                 </span>
               </NavLink>
@@ -111,7 +111,7 @@ const navLinks = [
               <div className="flex-1 flex justify-center max-w-xs">
                 <button
                   onClick={() => setOpen((s) => !s)}
-                  className="relative z-60 inline-flex items-center justify-center px-4 sm:px-6 py-2 rounded-full border border-red-500/30 bg-red-600 hover:bg-red-700 backdrop-blur-md shadow-lg hover:scale-105 transform transition active:scale-95"
+                  className="relative z-60 inline-flex items-center justify-center px-4 sm:px-6 py-1.5 md:py-2 rounded-full border border-red-500/30 bg-red-600 hover:bg-red-700 backdrop-blur-md shadow-lg hover:scale-105 transform transition active:scale-95"
                 >
                   <span className="hidden md:inline text-white font-semibold tracking-wide text-sm sm:text-base">
                     {open ? "CLOSE" : "MENU"}
@@ -127,14 +127,14 @@ const navLinks = [
               {/* Contact Buttons */}
               <NavLink
                 to="/contact"
-                className="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300"
+                className="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-1 md:py-2 rounded-lg shadow-md transition-all duration-300"
               >
                 Reach Out
               </NavLink>
 
               <NavLink
                 to="/contact"
-                className="md:hidden bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg shadow-md transition-all duration-300 text-sm active:scale-95"
+                className="md:hidden bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded-lg shadow-md transition-all duration-300 text-sm active:scale-95"
                 onClick={() => setOpen(false)}
               >
                 Contact
