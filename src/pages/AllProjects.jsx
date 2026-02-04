@@ -6,7 +6,7 @@ const AllProjects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
 
-  const categories = ["All", "Frontend", "Backend", "Full Stack"];
+  const categories = ["All", "Frontend", "Backend", "Full Stack","Portfolio"];
 
   const filteredProjects =
     selectedCategory === "All"
@@ -14,7 +14,7 @@ const AllProjects = () => {
       : projects.filter((p) => p.category === selectedCategory);
 
   return (
-    <section className="min-h-screen bg-black text-white py-16 px-6">
+    <section className="min-h-screen bg-black text-white py-16 px-6 poppins">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -66,7 +66,7 @@ const AllProjects = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-56 object-cover hover:scale-110 transition-transform duration-500"
+                className="w-full h-50 object-cover  transition-transform duration-500"
               />
             </div>
             <div className="p-5 flex flex-col gap-3">
