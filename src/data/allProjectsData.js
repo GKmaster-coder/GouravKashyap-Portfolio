@@ -95,9 +95,9 @@ export const projects = [
     },
     {
         id: 10,
-        title: "Tanishk Raj – Developer Portfolio",
+        title: "Tanishk Raj – Social Media Manager Portfolio",
         description:
-            "A modern, responsive developer portfolio showcasing projects, technical skills, and professional experience. Built with a strong focus on performance, clean UI, smooth animations, and scalable architecture to present work effectively and professionally.",
+            "A modern and responsive social media manager portfolio showcasing digital marketing campaigns, content strategies, brand growth, and analytics-driven results. Designed to highlight creative storytelling, audience engagement, and professional online presence.",
         image: "/assets/projects/tanishk-digital-marketing.webp",
         category: "Portfolio",
         tech: [
@@ -111,15 +111,15 @@ export const projects = [
         link: "https://tanishk-raj-portfolio.vercel.app/",
     },
     {
-  id: 11,
-  title: "Dr. Vijay Ayurvedic Medical College Hospital & Research Center Website",
-  description:
-    "A fully functional MERN stack website built during internship featuring dynamic pages, admin CMS, college information, and an SEO-optimized structure. The official live website of Dr. Vijay Ayurvedic Medical College Hospital & Research Center.",
-  image: "/assets/projects/dr.vijay-college.png",
-  category: "Full Stack",
-  tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-  link: "https://ntechzy-dr-vijay-ayurvedic-web.vercel.app/",
-}
+        id: 11,
+        title: "Dr. Vijay Ayurvedic Medical College Hospital & Research Center Website",
+        description:
+            "A fully functional MERN stack website built during internship featuring dynamic pages, admin CMS, college information, and an SEO-optimized structure. The official live website of Dr. Vijay Ayurvedic Medical College Hospital & Research Center.",
+        image: "/assets/projects/dr.vijay-college.png",
+        category: "Full Stack",
+        tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+        link: "https://ntechzy-dr-vijay-ayurvedic-web.vercel.app/",
+    }
 
 
 ];
