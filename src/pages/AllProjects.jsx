@@ -24,8 +24,8 @@ const ValorProjects = () => {
       </div>
 
    {/* HEADER SECTION */}
-<div className="relative pt-24 pb-12 px-8 md:px-16 border-b border-red-900/20 bg-linear-to-b from-red-950/10 to-transparent">
-  <div className="flex flex-col lg:flex-row justify-between items-end gap-10">
+<div className="relative pt-16 sm:pt-20 md:pt-24 pb-10 sm:pb-12 px-4 sm:px-6 md:px-16 border-b border-red-900/20 bg-linear-to-b from-red-950/10 to-transparent">
+  <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 sm:gap-10">
     <div>
       <div className="flex items-center gap-3 mb-2">
         <span className="bg-red-600 text-black px-2 py-0.5 text-[10px] font-black tracking-tighter uppercase">
@@ -34,23 +34,23 @@ const ValorProjects = () => {
         <div className="h-px w-12 bg-red-600/50" />
       </div>
 
-      <h1 className="text-7xl md:text-8xl font-black uppercase tracking-tighter italic leading-[0.8]">
+      <h1 className="text-5xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter italic leading-[0.85] sm:leading-[0.8]">
         LIVE<span className="text-red-600"> </span><br />
         PROJ<span className="text-red-600">ECTS</span>
       </h1>
 
-      <p className="mt-6 max-w-xl text-sm text-zinc-400 leading-relaxed">
+      <p className="mt-4 sm:mt-6 max-w-xl text-sm text-zinc-400 leading-relaxed">
         A curated collection of real-world projects, showcasing design precision,
         scalable architecture, and production-ready deployments.
       </p>
     </div>
 
-    <div className="flex flex-wrap gap-2 justify-end">
+    <div className="flex flex-wrap gap-2 justify-start lg:justify-end">
       {categories.map((cat) => (
         <button
           key={cat}
           onClick={() => setSelectedCategory(cat)}
-          className={`px-8 py-3 text-xs font-black uppercase tracking-[0.2em] transition-all relative overflow-hidden group ${
+          className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 text-[10px] sm:text-xs font-black uppercase tracking-[0.16em] sm:tracking-[0.2em] transition-all relative overflow-hidden group ${
             selectedCategory === cat
               ? "text-white"
               : "text-zinc-600 hover:text-zinc-300"
@@ -71,7 +71,7 @@ const ValorProjects = () => {
 
 
       {/* WIDE RECTANGULAR GRID */}
-      <div className="p-8 md:p-16">
+      <div className="p-4 sm:p-6 md:p-16">
         <motion.div layout className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
@@ -84,11 +84,11 @@ const ValorProjects = () => {
                 className="group relative bg-zinc-900/40 border border-zinc-800 hover:border-red-600/50 transition-all duration-500"
               >
                 {/* WIDE ASPECT CONTAINER */}
-                <div className="relative aspect-21/9 overflow-hidden">
+                <div className="relative aspect-video sm:aspect-21/9 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60 group-hover:opacity-100"
+                    className="w-full h-full object-cover grayscale-0  md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60 group-hover:opacity-100"
                   />
                   
                   {/* TACTICAL OVERLAY */}
@@ -100,19 +100,19 @@ const ValorProjects = () => {
                     </div>
                   </div>
 
-                  <div className="absolute bottom-6 left-8 max-w-[60%]">
-                    <h3 className="text-4xl font-black uppercase italic tracking-tighter leading-none mb-2">
+                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-8 max-w-[85%] sm:max-w-[60%]">
+                    <h3 className="text-2xl sm:text-4xl font-black uppercase italic tracking-tighter leading-none mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-[10px] text-zinc-400 uppercase tracking-widest font-bold line-clamp-1 group-hover:text-white transition-colors">
+                    <p className="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-widest font-bold line-clamp-2 sm:line-clamp-1 group-hover:text-white transition-colors">
                       {project.description}
                     </p>
                   </div>
                 </div>
 
                 {/* ACTION BAR */}
-                <div className="px-8 py-4 bg-black/60 flex justify-between items-center border-t border-zinc-800 group-hover:border-red-600/30 transition-colors">
-                  <div className="flex gap-4">
+                <div className="px-4 sm:px-8 py-3 sm:py-4 bg-black/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0 border-t border-zinc-800 group-hover:border-red-600/30 transition-colors">
+                  <div className="flex flex-wrap gap-x-3 gap-y-1">
                     {project.tech.map((t, i) => (
                       <span key={i} className="text-[9px] font-black text-zinc-500 uppercase tracking-tighter">
                         {t}
@@ -121,7 +121,7 @@ const ValorProjects = () => {
                   </div>
                   <a 
                     href={project.link} 
-                    className="relative px-6 py-2 bg-zinc-800 text-[10px] font-black uppercase tracking-widest hover:bg-red-600 hover:text-black transition-all"
+                    className="relative w-full sm:w-auto px-5 sm:px-6 py-2 bg-zinc-800 text-[10px] font-black uppercase tracking-widest hover:bg-red-600 hover:text-black transition-all text-center"
                   >
                     ACCESS_PROJECT
                   </a>
@@ -133,10 +133,10 @@ const ValorProjects = () => {
       </div>
 
       {/* FOOTER STATS */}
-      <div className="px-16 py-10 opacity-30 flex gap-20 overflow-hidden whitespace-nowrap">
+      <div className="px-4 sm:px-16 py-8 sm:py-10 opacity-30 flex gap-10 sm:gap-20 overflow-hidden whitespace-nowrap">
         {[1,2,3,4,5].map(i => (
           <div key={i} className="flex items-center gap-4">
-            <span className="text-4xl font-black italic text-zinc-800 uppercase">System Integrity 100%</span>
+            <span className="text-2xl sm:text-4xl font-black italic text-zinc-800 uppercase">System Integrity 100%</span>
             <div className="h-2 w-2 bg-red-600 rounded-full" />
           </div>
         ))}
